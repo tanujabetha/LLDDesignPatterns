@@ -1,4 +1,5 @@
 using creationalPatterns;
+using structuralPatterns;
 
 
 namespace solid;
@@ -51,5 +52,8 @@ class Program
         Prototype ob10 = ob9.GetClone();
         Console.WriteLine(ob9);
         Console.WriteLine(ob10);
+
+
+        //Structural Design Pattern
     }
 }
