@@ -45,5 +45,11 @@ class Program
         ob8.createCheckbox().Checkbox();
         ob8.createButton().OnClick();
         ob8.createCheckbox().OnSelect();
+
+        //Prototype Pattern
+        Prototype ob9 = new Prototype("1", "Prototype1");
+        Prototype ob10 = ob9.GetClone();
+        Console.WriteLine(ob9);
+        Console.WriteLine(ob10);
     }
 }
