@@ -49,10 +49,10 @@ class Pizza
 class BuilderPizza
 {
     //let's say only required is sauce. I will create a BuilderPizza constructor that requires it as Parameter
-    public string Size { get; set; }
-    public string CrustType { get; set; }
-    public List<string> Toppings { get; set; }
-    public string sauce { get; set; }
+    public string? Size { get; set; }
+    public string? CrustType { get; set; }
+    public List<string>? Toppings { get; set; }
+    public string? sauce { get; set; }
 
     public BuilderPizza(string sauce)
     {
