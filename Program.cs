@@ -55,5 +55,21 @@ class Program
 
 
         //Structural Design Pattern
+        //Adapter - Translator
+        IPaymentProcessor adapter;
+        int money;
+        Console.WriteLine("Enter the money now:");
+        money = int.Parse(Console.ReadLine());
+        adapter = new PaypalService();
+        adapter.paymentProcess(money);
+        adapter.checkStatus();
+
+        IPaymentProcessor stripe;
+        Console.WriteLine("Enter the money now:");
+        money = int.Parse(Console.ReadLine());
+        stripe = new StripeAdapter(new Stripe());
+        stripe.paymentProcess(money);
+        stripe.checkStatus();
+
     }
 }
