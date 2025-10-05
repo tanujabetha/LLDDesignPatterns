@@ -65,7 +65,7 @@ class StripeAdapter : IPaymentProcessor
     public bool IsPaymentSuccessful { get; private set; }
     public StripeAdapter(Stripe ob)
     {
-        ob.money = ob;
+        this.ob = ob;
     }
 
     public void paymentProcess(int money)

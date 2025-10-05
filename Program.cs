@@ -71,5 +71,10 @@ class Program
         stripe.paymentProcess(money);
         stripe.checkStatus();
 
+        //Facade pattern
+        //Client ideally will interact with facade only
+        facadePattern fa = new facadePattern();
+        fa.TransferMoney("tanuja", "tarun", 1000);
+
     }
 }
