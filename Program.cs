@@ -1,3 +1,4 @@
+using System.Runtime.InteropServices;
 using creationalPatterns;
 using structuralPatterns;
 
@@ -79,6 +80,21 @@ class Program
         //Decorator Pattern
         DecoratorPattern dp = new MochaDecorator(new SugarDecorator(new BaseCoffee()));
         Console.WriteLine(dp.makeCoffee() + "is now prepared for the client");
+
+        //composite pattern
+        IComposite f1 = new File("resume.pdf");
+        IComposite f2 = new File("I94.png");
+        IComposite f3 = new File("VISA.pdf");
+
+        Folder cf = new Folder("Documents");
+        cf.addFile(f1);
+        cf.addFile(f2);
+        cf.addFile(f3);
+
+        cf.getDetails();
+        f1.getDetails();
+
+        cf.delete();
 
     }
 }
