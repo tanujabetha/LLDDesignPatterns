@@ -76,5 +76,9 @@ class Program
         facadePattern fa = new facadePattern();
         fa.TransferMoney("tanuja", "tarun", 1000);
 
+        //Decorator Pattern
+        DecoratorPattern dp = new MochaDecorator(new SugarDecorator(new BaseCoffee()));
+        Console.WriteLine(dp.makeCoffee() + "is now prepared for the client");
+
     }
 }
