@@ -96,5 +96,13 @@ class Program
 
         cf.delete();
 
+        // //proxy Pattern
+        IProxyPattern proxy = new ProxyClass("file_pxy");
+        proxy.GetFileName();
+        //Should call from real
+        proxy.Display();
+        //should call from proxy
+        proxy.Display();
+
     }
 }

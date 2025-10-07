@@ -11,10 +11,10 @@
 using System.Collections.Generic;
 class Pizza
 {
-    public string Size { get; private set; }
-    public string CrustType { get; private set; }
-    public List<string> Toppings { get; private set; }
-    public string sauce { get; private set; }
+    public string? Size { get; private set; }
+    public string? CrustType { get; private set; }
+    public List<string>? Toppings { get; private set; }
+    public string? sauce { get; private set; }
     //Client cannot call this constructor as it is made private. Not only builder can help in creating the object to this Pizza
     //Setting the values of Builder Pizza here is needed
     public Pizza(BuilderPizza ob)
