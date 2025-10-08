@@ -104,5 +104,20 @@ class Program
         //should call from proxy
         proxy.Display();
 
+
+        //Bridge pattern
+        IType mp = new MP3();
+        IType wave = new WAV();
+
+        Player p1 = new BasicPlayer(mp);
+        Player p2 = new BasicPlayer(wave);
+        Player p3 = new AdvancedPlayer(mp);
+        Player p4 = new AdvancedPlayer(wave);
+
+        p1.Play();
+        p2.Play();
+        p3.Play();
+        p4.Play();
+
     }
 }
