@@ -1,3 +1,4 @@
+using System.Runtime.InteropServices;
 using creationalPatterns;
 using structuralPatterns;
 
@@ -55,5 +56,68 @@ class Program
 
 
         //Structural Design Pattern
+        //Adapter - Translator
+        IPaymentProcessor adapter;
+        int money;
+        Console.WriteLine("Enter the money now:");
+        money = int.Parse(Console.ReadLine());
+        adapter = new PaypalService();
+        adapter.paymentProcess(money);
+        adapter.checkStatus();
+
+        IPaymentProcessor stripe;
+        Console.WriteLine("Enter the money now:");
+        money = int.Parse(Console.ReadLine());
+        stripe = new StripeAdapter(new Stripe());
+        stripe.paymentProcess(money);
+        stripe.checkStatus();
+
+        //Facade pattern
+        //Client ideally will interact with facade only
+        facadePattern fa = new facadePattern();
+        fa.TransferMoney("tanuja", "tarun", 1000);
+
+        //Decorator Pattern
+        DecoratorPattern dp = new MochaDecorator(new SugarDecorator(new BaseCoffee()));
+        Console.WriteLine(dp.makeCoffee() + "is now prepared for the client");
+
+        //composite pattern
+        IComposite f1 = new File("resume.pdf");
+        IComposite f2 = new File("I94.png");
+        IComposite f3 = new File("VISA.pdf");
+
+        Folder cf = new Folder("Documents");
+        cf.addFile(f1);
+        cf.addFile(f2);
+        cf.addFile(f3);
+
+        cf.getDetails();
+        f1.getDetails();
+
+        cf.delete();
+
+        // //proxy Pattern
+        IProxyPattern proxy = new ProxyClass("file_pxy");
+        proxy.GetFileName();
+        //Should call from real
+        proxy.Display();
+        //should call from proxy
+        proxy.Display();
+
+
+        //Bridge pattern
+        IType mp = new MP3();
+        IType wave = new WAV();
+
+        Player p1 = new BasicPlayer(mp);
+        Player p2 = new BasicPlayer(wave);
+        Player p3 = new AdvancedPlayer(mp);
+        Player p4 = new AdvancedPlayer(wave);
+
+        p1.Play();
+        p2.Play();
+        p3.Play();
+        p4.Play();
+
     }
 }
