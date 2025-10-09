@@ -119,5 +119,15 @@ class Program
         p3.Play();
         p4.Play();
 
+        //flyweight Pattern
+        Forest flyweight1 = new Forest();
+        flyweight1.PlantTree("Oak", "Olive", 0, 0);
+        flyweight1.PlantTree("Oak", "Olive", 1, 2);
+        flyweight1.PlantTree("Oak", "Green", 2, 0);
+        flyweight1.PlantTree("Oak", "Blue", 0, 0);
+
+        flyweight1.Positions();
+
+
     }
 }
